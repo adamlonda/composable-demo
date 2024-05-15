@@ -10,3 +10,4 @@ A sample iOS app based on [Pointfree Composable Architecture tutorial](https://p
 ## Third-party Dependencies
 
 * [Composable Architecture](https://github.com/pointfreeco/swift-composable-architecture) 1.10.4
+* [Tagged](https://github.com/pointfreeco/swift-tagged) 0.10.0

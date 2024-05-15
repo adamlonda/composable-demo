@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		911053B52BF4B07400E61C94 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911053B42BF4B07400E61C94 /* Models.swift */; };
+		911053B82BF4B5FB00E61C94 /* Tagged in Frameworks */ = {isa = PBXBuildFile; productRef = 911053B72BF4B5FB00E61C94 /* Tagged */; };
 		91D02CB62BF37134004EE097 /* ComposableDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D02CB52BF37134004EE097 /* ComposableDemoApp.swift */; };
 		91D02CB82BF37134004EE097 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D02CB72BF37134004EE097 /* ContentView.swift */; };
 		91D02CBA2BF37137004EE097 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91D02CB92BF37137004EE097 /* Assets.xcassets */; };
@@ -35,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		911053B42BF4B07400E61C94 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		91D02CB22BF37134004EE097 /* ComposableDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ComposableDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91D02CB52BF37134004EE097 /* ComposableDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposableDemoApp.swift; sourceTree = "<group>"; };
 		91D02CB72BF37134004EE097 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -52,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				911053B82BF4B5FB00E61C94 /* Tagged in Frameworks */,
 				91D02CE12BF3776F004EE097 /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -100,6 +104,7 @@
 				91D02CB72BF37134004EE097 /* ContentView.swift */,
 				91D02CB92BF37137004EE097 /* Assets.xcassets */,
 				91D02CBB2BF37137004EE097 /* Preview Content */,
+				911053B42BF4B07400E61C94 /* Models.swift */,
 			);
 			path = ComposableDemo;
 			sourceTree = "<group>";
@@ -147,6 +152,7 @@
 			name = ComposableDemo;
 			packageProductDependencies = (
 				91D02CE02BF3776F004EE097 /* ComposableArchitecture */,
+				911053B72BF4B5FB00E61C94 /* Tagged */,
 			);
 			productName = ComposableDemo;
 			productReference = 91D02CB22BF37134004EE097 /* ComposableDemo.app */;
@@ -222,6 +228,7 @@
 			mainGroup = 91D02CA92BF37134004EE097;
 			packageReferences = (
 				91D02CDF2BF3776F004EE097 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+				911053B62BF4B5FB00E61C94 /* XCRemoteSwiftPackageReference "swift-tagged" */,
 			);
 			productRefGroup = 91D02CB32BF37134004EE097 /* Products */;
 			projectDirPath = "";
@@ -265,6 +272,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				911053B52BF4B07400E61C94 /* Models.swift in Sources */,
 				91D02CB82BF37134004EE097 /* ContentView.swift in Sources */,
 				91D02CB62BF37134004EE097 /* ComposableDemoApp.swift in Sources */,
 			);
@@ -600,6 +608,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		911053B62BF4B5FB00E61C94 /* XCRemoteSwiftPackageReference "swift-tagged" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-tagged";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.10.0;
+			};
+		};
 		91D02CDF2BF3776F004EE097 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
@@ -611,6 +627,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		911053B72BF4B5FB00E61C94 /* Tagged */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 911053B62BF4B5FB00E61C94 /* XCRemoteSwiftPackageReference "swift-tagged" */;
+			productName = Tagged;
+		};
 		91D02CE02BF3776F004EE097 /* ComposableArchitecture */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 91D02CDF2BF3776F004EE097 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
