@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		911053B52BF4B07400E61C94 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911053B42BF4B07400E61C94 /* Models.swift */; };
 		911053B82BF4B5FB00E61C94 /* Tagged in Frameworks */ = {isa = PBXBuildFile; productRef = 911053B72BF4B5FB00E61C94 /* Tagged */; };
+		911053BA2BF4C59C00E61C94 /* SyncUpsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911053B92BF4C59B00E61C94 /* SyncUpsList.swift */; };
 		91D02CB62BF37134004EE097 /* ComposableDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D02CB52BF37134004EE097 /* ComposableDemoApp.swift */; };
 		91D02CB82BF37134004EE097 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D02CB72BF37134004EE097 /* ContentView.swift */; };
 		91D02CBA2BF37137004EE097 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91D02CB92BF37137004EE097 /* Assets.xcassets */; };
@@ -38,6 +39,7 @@
 
 /* Begin PBXFileReference section */
 		911053B42BF4B07400E61C94 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		911053B92BF4C59B00E61C94 /* SyncUpsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncUpsList.swift; sourceTree = "<group>"; };
 		91D02CB22BF37134004EE097 /* ComposableDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ComposableDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91D02CB52BF37134004EE097 /* ComposableDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposableDemoApp.swift; sourceTree = "<group>"; };
 		91D02CB72BF37134004EE097 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				91D02CB92BF37137004EE097 /* Assets.xcassets */,
 				91D02CBB2BF37137004EE097 /* Preview Content */,
 				911053B42BF4B07400E61C94 /* Models.swift */,
+				911053B92BF4C59B00E61C94 /* SyncUpsList.swift */,
 			);
 			path = ComposableDemo;
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				911053B52BF4B07400E61C94 /* Models.swift in Sources */,
+				911053BA2BF4C59C00E61C94 /* SyncUpsList.swift in Sources */,
 				91D02CB82BF37134004EE097 /* ContentView.swift in Sources */,
 				91D02CB62BF37134004EE097 /* ComposableDemoApp.swift in Sources */,
 			);
