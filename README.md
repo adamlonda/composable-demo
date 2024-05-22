@@ -4,8 +4,8 @@ A sample iOS app based on [Pointfree Composable Architecture tutorial](https://p
 
 ## Targeting & Build
 
-* iOS 17.2
-* Xcode 15.2 (15C500b)
+* iOS 17.4
+* Xcode 15.4 (15F31d)
 
 ## Third-party Dependencies
 
