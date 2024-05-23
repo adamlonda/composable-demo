@@ -11,6 +11,7 @@
 		911053B82BF4B5FB00E61C94 /* Tagged in Frameworks */ = {isa = PBXBuildFile; productRef = 911053B72BF4B5FB00E61C94 /* Tagged */; };
 		911053BA2BF4C59C00E61C94 /* SyncUpsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911053B92BF4C59B00E61C94 /* SyncUpsList.swift */; };
 		912F9A9E2BF78BD700E67821 /* SyncUpForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912F9A9D2BF78BD700E67821 /* SyncUpForm.swift */; };
+		91312E472BFF63DB00AC43A3 /* SyncUpFormTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91312E462BFF63DB00AC43A3 /* SyncUpFormTests.swift */; };
 		91B9FD422BF66373001B448E /* SyncUpsListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B9FD412BF66372001B448E /* SyncUpsListTests.swift */; };
 		91D02CB62BF37134004EE097 /* ComposableDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D02CB52BF37134004EE097 /* ComposableDemoApp.swift */; };
 		91D02CB82BF37134004EE097 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D02CB72BF37134004EE097 /* ContentView.swift */; };
@@ -42,6 +43,7 @@
 		911053B42BF4B07400E61C94 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		911053B92BF4C59B00E61C94 /* SyncUpsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncUpsList.swift; sourceTree = "<group>"; };
 		912F9A9D2BF78BD700E67821 /* SyncUpForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncUpForm.swift; sourceTree = "<group>"; };
+		91312E462BFF63DB00AC43A3 /* SyncUpFormTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncUpFormTests.swift; sourceTree = "<group>"; };
 		91B9FD412BF66372001B448E /* SyncUpsListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncUpsListTests.swift; sourceTree = "<group>"; };
 		91D02CB22BF37134004EE097 /* ComposableDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ComposableDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91D02CB52BF37134004EE097 /* ComposableDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposableDemoApp.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				91B9FD412BF66372001B448E /* SyncUpsListTests.swift */,
+				91312E462BFF63DB00AC43A3 /* SyncUpFormTests.swift */,
 			);
 			path = ComposableDemoTests;
 			sourceTree = "<group>";
@@ -291,6 +294,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				91B9FD422BF66373001B448E /* SyncUpsListTests.swift in Sources */,
+				91312E472BFF63DB00AC43A3 /* SyncUpFormTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

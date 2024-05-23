@@ -24,13 +24,15 @@ import SwiftUI
         case onDeleteAttendees(IndexSet)
     }
 
+    @Dependency(\.uuid) var uuid
+
     var body: some ReducerOf<Self> {
         BindingReducer()
 
         Reduce { state, action in
             switch action {
                 case .addAttendeeButtonTapped:
-                    let attendee = Attendee(id: Attendee.ID())
+                    let attendee = Attendee(id: Attendee.ID(uuid()))
                     state.syncUp.attendees.append(attendee)
                     state.focus = .attendee(attendee.id)
                     return .none
