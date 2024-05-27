@@ -23,11 +23,13 @@ import SwiftUI
         case syncUpTapped(id: SyncUp.ID)
     }
 
+    @Dependency(\.uuid) var uuid
+
     var body: some ReducerOf<Self> {
         Reduce<State, Action> { state, action in
             switch action {
                 case .addSyncUpButtonTapped:
-                    state.addSyncUp = SyncUpForm.State(syncUp: SyncUp(id: SyncUp.ID()))
+                    state.addSyncUp = SyncUpForm.State(syncUp: SyncUp(id: SyncUp.ID(uuid())))
                     return .none
                 case .addSyncUp:
                     return .none
