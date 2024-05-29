@@ -3,14 +3,14 @@ import Foundation
 import ComposableArchitecture
 import SwiftUI
 
-#warning("Split Reducers / Views into separate files / packages ❔")
+#warning("Split Reducers / Storage / Views into separate files / packages ❔")
 
 // MARK: - Reducer
 
 @Reducer struct SyncUpsList {
 
     @ObservableState struct State: Equatable {
-        var syncUps: IdentifiedArrayOf<SyncUp> = []
+        @Shared(.fileStorage(.syncUps)) var syncUps: IdentifiedArrayOf<SyncUp> = []
         @Presents var addSyncUp: SyncUpForm.State?
     }
 
@@ -52,6 +52,10 @@ import SwiftUI
             SyncUpForm()
         }
     }
+}
+
+extension URL {
+    static let syncUps = Self.documentsDirectory.appending(component: "sync-ups.json")
 }
 
 // MARK: - Card View
