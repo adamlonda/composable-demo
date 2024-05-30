@@ -10,21 +10,39 @@ import SwiftUI
 
     @ObservableState struct State: Equatable {
         @Shared var syncUp: SyncUp
+        @Presents var editSyncUp: SyncUpForm.State?
     }
 
     enum Action {
+        case cancelEditButtonTapped
         case deleteButtonTapped
+        case doneEditingButtonTapped
         case editButtonTapped
+        case editSyncUp(PresentationAction<SyncUpForm.Action>)
     }
 
     var body: some ReducerOf<Self> {
         Reduce { state, action in
             switch action {
+                case .cancelEditButtonTapped:
+                    state.editSyncUp = nil
+                    return .none
                 case .deleteButtonTapped:
                     return .none
+                case .doneEditingButtonTapped:
+                    guard let editedSyncUp = state.editSyncUp?.syncUp else { return .none }
+                    state.syncUp = editedSyncUp
+                    state.editSyncUp = nil
+                    return .none
                 case .editButtonTapped:
+                    state.editSyncUp = SyncUpForm.State(syncUp: state.syncUp)
+                    return .none
+                case .editSyncUp:
                     return .none
             }
+        }
+        .ifLet(\.$editSyncUp, action: \.editSyncUp) {
+            SyncUpForm()
         }
     }
 }
@@ -33,7 +51,7 @@ import SwiftUI
 
 struct SyncUpDetailView: View {
 
-    let store: StoreOf<SyncUpDetail>
+    @Bindable var store: StoreOf<SyncUpDetail>
 
     var body: some View {
         Form {
@@ -101,6 +119,24 @@ struct SyncUpDetailView: View {
         .toolbar {
             Button("Edit") {
                 store.send(.editButtonTapped)
+            }
+        }
+        .sheet(item: $store.scope(state: \.editSyncUp, action: \.editSyncUp)) { editSyncUpStore in
+            NavigationStack {
+                SyncUpFormView(store: editSyncUpStore)
+                    .navigationTitle(store.syncUp.title)
+                    .toolbar {
+                        ToolbarItem(placement: .cancellationAction) {
+                            Button("Cancel") {
+                                store.send(.cancelEditButtonTapped)
+                            }
+                        }
+                        ToolbarItem(placement: .confirmationAction) {
+                            Button("Done") {
+                                store.send(.doneEditingButtonTapped)
+                            }
+                        }
+                    }
             }
         }
     }
