@@ -8,23 +8,26 @@ import SwiftUI
 
 @Reducer struct SyncUpDetail {
 
-    @ObservableState struct State: Equatable {
-        @Presents var alert: AlertState<Action.Alert>?
-        @Shared var syncUp: SyncUp
-        @Presents var editSyncUp: SyncUpForm.State?
-    }
-
-    enum Action {
-        case alert(PresentationAction<Alert>)
-        case cancelEditButtonTapped
-        case deleteButtonTapped
-        case doneEditingButtonTapped
-        case editButtonTapped
-        case editSyncUp(PresentationAction<SyncUpForm.Action>)
+    @Reducer(state: .equatable) enum Destination {
+        case alert(AlertState<Alert>)
+        case edit(SyncUpForm)
 
         @CasePathable enum Alert {
             case confirmButtonTapped
         }
+    }
+
+    @ObservableState struct State: Equatable {
+        @Presents var destination: Destination.State?
+        @Shared var syncUp: SyncUp
+    }
+
+    enum Action {
+        case cancelEditButtonTapped
+        case deleteButtonTapped
+        case destination(PresentationAction<Destination.Action>)
+        case doneEditingButtonTapped
+        case editButtonTapped
     }
 
     @Dependency(\.dismiss) var dismiss
@@ -32,46 +35,40 @@ import SwiftUI
     var body: some ReducerOf<Self> {
         Reduce { state, action in
             switch action {
-                case .alert(.presented(.confirmButtonTapped)):
+                case .destination(.presented(.alert(.confirmButtonTapped))):
                     @Shared(.fileStorage(.syncUps)) var syncUps: IdentifiedArrayOf<SyncUp> = []
                     syncUps.remove(id: state.syncUp.id)
                     return .run { _ in await dismiss() }
 
-                case .alert(.dismiss):
+                case .destination:
                     return .none
 
                 case .cancelEditButtonTapped:
-                    state.editSyncUp = nil
+                    state.destination = nil
                     return .none
 
                 case .deleteButtonTapped:
-                    state.alert = .deleteSyncUp
+                    state.destination = .alert(.deleteSyncUp)
                     return .none
 
                 case .doneEditingButtonTapped:
-                    guard let editedSyncUp = state.editSyncUp?.syncUp else { return .none }
+                    guard let editedSyncUp = state.destination?.edit?.syncUp else { return .none }
                     state.syncUp = editedSyncUp
-                    state.editSyncUp = nil
+                    state.destination = nil
                     return .none
 
                 case .editButtonTapped:
-                    state.editSyncUp = SyncUpForm.State(syncUp: state.syncUp)
-                    return .none
-
-                case .editSyncUp:
+                    state.destination = .edit(SyncUpForm.State(syncUp: state.syncUp))
                     return .none
             }
         }
-        .ifLet(\.$editSyncUp, action: \.editSyncUp) {
-            SyncUpForm()
-        }
-        .ifLet(\.$alert, action: \.alert)
+        .ifLet(\.$destination, action: \.destination)
     }
 }
 
 // MARK: - Reducer Convenience
 
-extension AlertState where Action == SyncUpDetail.Action.Alert {
+extension AlertState where Action == SyncUpDetail.Destination.Alert {
 
     static let deleteSyncUp = Self {
         TextState("Delete?")
@@ -155,14 +152,16 @@ struct SyncUpDetailView: View {
                 .frame(maxWidth: .infinity)
             }
         }
-        .navigationTitle(Text(store.syncUp.title))
         .toolbar {
             Button("Edit") {
                 store.send(.editButtonTapped)
             }
         }
-        .alert($store.scope(state: \.alert, action: \.alert))
-        .sheet(item: $store.scope(state: \.editSyncUp, action: \.editSyncUp)) { editSyncUpStore in
+        .navigationTitle(Text(store.syncUp.title))
+        .alert($store.scope(state: \.destination?.alert, action: \.destination.alert))
+        .sheet(
+            item: $store.scope(state: \.destination?.edit, action: \.destination.edit)
+        ) { editSyncUpStore in
             NavigationStack {
                 SyncUpFormView(store: editSyncUpStore)
                     .navigationTitle(store.syncUp.title)
