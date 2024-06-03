@@ -11,15 +11,13 @@ import SwiftUI
 @main
 struct ComposableDemoApp: App {
 
-    @MainActor static let store = Store(initialState: SyncUpsList.State()) {
-        SyncUpsList()
+    @MainActor static let store = Store(initialState: AppFeature.State()) {
+        AppFeature()
     }
 
     var body: some Scene {
         WindowGroup {
-            NavigationStack {
-                SyncUpsListView(store: Self.store)
-            }
+            AppView(store: Self.store)
         }
     }
 }
