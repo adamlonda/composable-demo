@@ -10,6 +10,7 @@ import SwiftUI
 
     @Reducer enum Path {
         case detail(SyncUpDetail)
+        case meeting(Meeting, syncUp: SyncUp)
     }
 
     @ObservableState struct State {
@@ -55,6 +56,8 @@ struct AppView: View {
             switch store.case {
                 case let .detail(detailStore):
                     SyncUpDetailView(store: detailStore)
+                case let .meeting(meeting, syncUp: syncUp):
+                    MeetingView(meeting: meeting, syncUp: syncUp)
             }
         }
     }

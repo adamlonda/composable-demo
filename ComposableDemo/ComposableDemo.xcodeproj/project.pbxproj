@@ -15,6 +15,7 @@
 		912F9A9E2BF78BD700E67821 /* SyncUpForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912F9A9D2BF78BD700E67821 /* SyncUpForm.swift */; };
 		91312E472BFF63DB00AC43A3 /* SyncUpFormTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91312E462BFF63DB00AC43A3 /* SyncUpFormTests.swift */; };
 		91470F3C2C0E08B600EA99F9 /* AppFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91470F3B2C0E08B600EA99F9 /* AppFeature.swift */; };
+		919F05CC2C109FE700892BB6 /* MeetingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919F05CB2C109FE700892BB6 /* MeetingView.swift */; };
 		91B9FD422BF66373001B448E /* SyncUpsListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B9FD412BF66372001B448E /* SyncUpsListTests.swift */; };
 		91D02CB62BF37134004EE097 /* ComposableDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D02CB52BF37134004EE097 /* ComposableDemoApp.swift */; };
 		91D02CBA2BF37137004EE097 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91D02CB92BF37137004EE097 /* Assets.xcassets */; };
@@ -49,6 +50,7 @@
 		912F9A9D2BF78BD700E67821 /* SyncUpForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncUpForm.swift; sourceTree = "<group>"; };
 		91312E462BFF63DB00AC43A3 /* SyncUpFormTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncUpFormTests.swift; sourceTree = "<group>"; };
 		91470F3B2C0E08B600EA99F9 /* AppFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFeature.swift; sourceTree = "<group>"; };
+		919F05CB2C109FE700892BB6 /* MeetingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingView.swift; sourceTree = "<group>"; };
 		91B9FD412BF66372001B448E /* SyncUpsListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncUpsListTests.swift; sourceTree = "<group>"; };
 		91D02CB22BF37134004EE097 /* ComposableDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ComposableDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91D02CB52BF37134004EE097 /* ComposableDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposableDemoApp.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 				912F9A9D2BF78BD700E67821 /* SyncUpForm.swift */,
 				912523FA2C07760B0024BFBF /* SyncUpDetail.swift */,
 				91470F3B2C0E08B600EA99F9 /* AppFeature.swift */,
+				919F05CB2C109FE700892BB6 /* MeetingView.swift */,
 			);
 			path = ComposableDemo;
 			sourceTree = "<group>";
@@ -287,6 +290,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				919F05CC2C109FE700892BB6 /* MeetingView.swift in Sources */,
 				911053B52BF4B07400E61C94 /* Models.swift in Sources */,
 				912523FB2C07760B0024BFBF /* SyncUpDetail.swift in Sources */,
 				912F9A9E2BF78BD700E67821 /* SyncUpForm.swift in Sources */,
