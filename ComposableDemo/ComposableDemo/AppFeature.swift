@@ -13,9 +13,13 @@ import SwiftUI
         case meeting(Meeting, syncUp: SyncUp)
     }
 
-    @ObservableState struct State {
+    @ObservableState struct State: Equatable {
         var path = StackState<Path.State>()
         var syncUpsList = SyncUpsList.State()
+
+        static func == (lhs: AppFeature.State, rhs: AppFeature.State) -> Bool {
+            lhs.path.ids == rhs.path.ids && lhs.syncUpsList == rhs.syncUpsList
+        }
     }
 
     enum Action {
