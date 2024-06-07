@@ -24,6 +24,7 @@
 		91D02CD12BF37138004EE097 /* ComposableDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D02CD02BF37138004EE097 /* ComposableDemoUITests.swift */; };
 		91D02CD32BF37138004EE097 /* ComposableDemoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D02CD22BF37138004EE097 /* ComposableDemoUITestsLaunchTests.swift */; };
 		91D02CE12BF3776F004EE097 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 91D02CE02BF3776F004EE097 /* ComposableArchitecture */; };
+		91ED86892C1372A2002A5554 /* RecordMeeting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91ED86882C1372A2002A5554 /* RecordMeeting.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		91D02CCC2BF37138004EE097 /* ComposableDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ComposableDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		91D02CD02BF37138004EE097 /* ComposableDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposableDemoUITests.swift; sourceTree = "<group>"; };
 		91D02CD22BF37138004EE097 /* ComposableDemoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposableDemoUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		91ED86882C1372A2002A5554 /* RecordMeeting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordMeeting.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 				912523FA2C07760B0024BFBF /* SyncUpDetail.swift */,
 				91470F3B2C0E08B600EA99F9 /* AppFeature.swift */,
 				919F05CB2C109FE700892BB6 /* MeetingView.swift */,
+				91ED86882C1372A2002A5554 /* RecordMeeting.swift */,
 			);
 			path = ComposableDemo;
 			sourceTree = "<group>";
@@ -299,6 +302,7 @@
 				912F9A9E2BF78BD700E67821 /* SyncUpForm.swift in Sources */,
 				91470F3C2C0E08B600EA99F9 /* AppFeature.swift in Sources */,
 				911053BA2BF4C59C00E61C94 /* SyncUpsList.swift in Sources */,
+				91ED86892C1372A2002A5554 /* RecordMeeting.swift in Sources */,
 				91D02CB62BF37134004EE097 /* ComposableDemoApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
