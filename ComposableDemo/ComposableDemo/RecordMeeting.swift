@@ -22,6 +22,42 @@ import SwiftUI
     enum Action {
         case endMeetingButtonTapped
         case nextButtonTapped
+        case onAppear
+        case timerTick
+    }
+
+    @Dependency(\.dismiss) var dismiss
+
+    var body: some ReducerOf<Self> {
+        Reduce { state, action in
+            switch action {
+                case .endMeetingButtonTapped:
+                    return .none
+                case .nextButtonTapped:
+                    return .none
+                case .onAppear:
+                    return .run { send in
+                        while true {
+                            try await Task.sleep(for: .seconds(1))
+                            await send(.timerTick)
+                        }
+                    }
+                case .timerTick:
+                    state.secondsElapsed += 1
+                    let secondsPerAttendee = Int(state.syncUp.durationPerAttendee.components.seconds)
+                    if state.secondsElapsed.isMultiple(of: secondsPerAttendee) {
+                        if state.secondsElapsed == state.syncUp.duration.components.seconds {
+                            state.syncUp.meetings.insert(
+                                Meeting(id: Meeting.ID(), date: Date(), transcript: state.transcript),
+                                at: 0
+                            )
+                            return .run { _ in await dismiss() }
+                        }
+                        state.speakerIndex += 1
+                    }
+                    return .none
+            }
+        }
     }
 }
 
@@ -66,6 +102,7 @@ struct RecordMeetingView: View {
             }
         }
         .navigationBarBackButtonHidden(true)
+        .onAppear { store.send(.onAppear) }
     }
 }
 

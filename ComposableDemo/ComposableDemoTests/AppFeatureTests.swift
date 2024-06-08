@@ -15,7 +15,7 @@ final class AppFeatureTests: XCTestCase {
             ],
             title: "Point-Free Morning Sync"
         )
-        @Shared(.fileStorage(.syncUps)) var syncUps: IdentifiedArrayOf<SyncUp> = [syncUp]
+        @Shared(.syncUps) var syncUps: IdentifiedArrayOf<SyncUp> = [syncUp]
 
         let store = TestStore(initialState: AppFeature.State()) {
             AppFeature()

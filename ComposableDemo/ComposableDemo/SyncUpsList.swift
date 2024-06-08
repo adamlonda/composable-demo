@@ -10,7 +10,7 @@ import SwiftUI
 @Reducer struct SyncUpsList {
 
     @ObservableState struct State: Equatable {
-        @Shared(.fileStorage(.syncUps)) var syncUps: IdentifiedArrayOf<SyncUp> = []
+        @Shared(.syncUps) var syncUps: IdentifiedArrayOf<SyncUp> = []
         @Presents var addSyncUp: SyncUpForm.State?
     }
 
@@ -54,8 +54,16 @@ import SwiftUI
     }
 }
 
-extension URL {
-    static let syncUps = Self.documentsDirectory.appending(component: "sync-ups.json")
+// MARK: - Storage
+
+extension PersistenceReaderKey
+    where Self == PersistenceKeyDefault<FileStorageKey<IdentifiedArrayOf<SyncUp>>> {
+    static var syncUps: Self {
+        PersistenceKeyDefault(
+            .fileStorage(.documentsDirectory.appending(component: "sync-ups.json")),
+            []
+        )
+    }
 }
 
 // MARK: - Card View

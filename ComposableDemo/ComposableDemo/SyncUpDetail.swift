@@ -36,7 +36,7 @@ import SwiftUI
         Reduce { state, action in
             switch action {
                 case .destination(.presented(.alert(.confirmButtonTapped))):
-                    @Shared(.fileStorage(.syncUps)) var syncUps: IdentifiedArrayOf<SyncUp> = []
+                    @Shared(.syncUps) var syncUps: IdentifiedArrayOf<SyncUp> = []
                     syncUps.remove(id: state.syncUp.id)
                     return .run { _ in await dismiss() }
 
