@@ -26,7 +26,10 @@ import SwiftUI
         case timerTick
     }
 
+    @Dependency(\.continuousClock) var clock
     @Dependency(\.dismiss) var dismiss
+    @Dependency(\.date.now) var now
+    @Dependency(\.uuid) var uuid
 
     var body: some ReducerOf<Self> {
         Reduce { state, action in
@@ -37,8 +40,7 @@ import SwiftUI
                     return .none
                 case .onAppear:
                     return .run { send in
-                        while true {
-                            try await Task.sleep(for: .seconds(1))
+                        for await _ in clock.timer(interval: .seconds(1)) {
                             await send(.timerTick)
                         }
                     }
@@ -48,7 +50,7 @@ import SwiftUI
                     if state.secondsElapsed.isMultiple(of: secondsPerAttendee) {
                         if state.secondsElapsed == state.syncUp.duration.components.seconds {
                             state.syncUp.meetings.insert(
-                                Meeting(id: Meeting.ID(), date: Date(), transcript: state.transcript),
+                                Meeting(id: Meeting.ID(uuid()), date: now, transcript: state.transcript),
                                 at: 0
                             )
                             return .run { _ in await dismiss() }
