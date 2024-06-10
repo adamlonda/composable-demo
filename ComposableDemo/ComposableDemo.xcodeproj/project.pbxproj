@@ -15,6 +15,7 @@
 		912F9A9E2BF78BD700E67821 /* SyncUpForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912F9A9D2BF78BD700E67821 /* SyncUpForm.swift */; };
 		91312E472BFF63DB00AC43A3 /* SyncUpFormTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91312E462BFF63DB00AC43A3 /* SyncUpFormTests.swift */; };
 		91470F3C2C0E08B600EA99F9 /* AppFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91470F3B2C0E08B600EA99F9 /* AppFeature.swift */; };
+		915D5E9D2C171CEC00E55B52 /* RecordMeetingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915D5E9C2C171CEC00E55B52 /* RecordMeetingTests.swift */; };
 		919F05CC2C109FE700892BB6 /* MeetingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919F05CB2C109FE700892BB6 /* MeetingView.swift */; };
 		91AC18CD2C11B1FD00DD6285 /* AppFeatureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AC18CC2C11B1FD00DD6285 /* AppFeatureTests.swift */; };
 		91B9FD422BF66373001B448E /* SyncUpsListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B9FD412BF66372001B448E /* SyncUpsListTests.swift */; };
@@ -52,6 +53,7 @@
 		912F9A9D2BF78BD700E67821 /* SyncUpForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncUpForm.swift; sourceTree = "<group>"; };
 		91312E462BFF63DB00AC43A3 /* SyncUpFormTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncUpFormTests.swift; sourceTree = "<group>"; };
 		91470F3B2C0E08B600EA99F9 /* AppFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFeature.swift; sourceTree = "<group>"; };
+		915D5E9C2C171CEC00E55B52 /* RecordMeetingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordMeetingTests.swift; sourceTree = "<group>"; };
 		919F05CB2C109FE700892BB6 /* MeetingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingView.swift; sourceTree = "<group>"; };
 		91AC18CC2C11B1FD00DD6285 /* AppFeatureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFeatureTests.swift; sourceTree = "<group>"; };
 		91B9FD412BF66372001B448E /* SyncUpsListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncUpsListTests.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 				91312E462BFF63DB00AC43A3 /* SyncUpFormTests.swift */,
 				910B7F0F2C0C8FAF0004AEC0 /* SyncUpDetailTests.swift */,
 				91AC18CC2C11B1FD00DD6285 /* AppFeatureTests.swift */,
+				915D5E9C2C171CEC00E55B52 /* RecordMeetingTests.swift */,
 			);
 			path = ComposableDemoTests;
 			sourceTree = "<group>";
@@ -311,6 +314,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				915D5E9D2C171CEC00E55B52 /* RecordMeetingTests.swift in Sources */,
 				91AC18CD2C11B1FD00DD6285 /* AppFeatureTests.swift in Sources */,
 				91B9FD422BF66373001B448E /* SyncUpsListTests.swift in Sources */,
 				91312E472BFF63DB00AC43A3 /* SyncUpFormTests.swift in Sources */,
