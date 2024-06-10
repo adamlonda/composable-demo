@@ -1,0 +1,28 @@
+{
+  "configurations" : [
+    {
+      "id" : "5C8F688F-A934-495A-A245-42B037000746",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:ComposableDemo.xcodeproj",
+      "identifier" : "91D02CB12BF37134004EE097",
+      "name" : "ComposableDemo"
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:ComposableDemo.xcodeproj",
+        "identifier" : "91D02CC12BF37138004EE097",
+        "name" : "ComposableDemoTests"
+      }
+    }
+  ],
+  "version" : 1
+}
