@@ -23,3 +23,9 @@ struct ComposableDemoApp: App {
         }
     }
 }
+
+#if compiler(<6.0) || !hasFeature(InferSendableFromCaptures)
+#warning("Remove this workaround when Swift 6 is available 🎗️")
+// Related to Strict Concurrency warnings
+extension KeyPath: @unchecked Sendable {}
+#endif

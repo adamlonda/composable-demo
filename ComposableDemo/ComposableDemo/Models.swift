@@ -3,8 +3,8 @@ import IdentifiedCollections
 import SwiftUI
 import Tagged
 
-#warning("Split into separate files 💡")
-#warning("Make Models a separate package ❔")
+#warning("TODO: Split into separate files 💡")
+#warning("TODO: Make Models a separate package ❔")
 
 struct SyncUp: Equatable, Identifiable, Codable {
     let id: Tagged<Self, UUID>
@@ -59,6 +59,6 @@ enum Theme: String, CaseIterable, Equatable, Identifiable, Codable {
         }
     }
 
-    var mainColor: Color { Color(rawValue) }
+    var mainColor: Color { Color("\(rawValue)Theme") }
     var name: String { rawValue.capitalized }
 }
