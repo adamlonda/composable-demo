@@ -1,4 +1,3 @@
-
 import ComposableArchitecture
 @testable import ComposableDemo
 import XCTest
@@ -11,7 +10,7 @@ final class AppFeatureTests: XCTestCase {
             attendees: [
                 Attendee(id: Attendee.ID(), name: "Blob"),
                 Attendee(id: Attendee.ID(), name: "Blob Jr."),
-                Attendee(id: Attendee.ID(), name: "Blob Sr."),
+                Attendee(id: Attendee.ID(), name: "Blob Sr.")
             ],
             title: "Point-Free Morning Sync"
         )
@@ -30,8 +29,8 @@ final class AppFeatureTests: XCTestCase {
             $0.path[id: 0] = .detail(SyncUpDetail.State(syncUp: sharedSyncUp))
         }
 
-        await store.send(\.path[id:0].detail.deleteButtonTapped)
-        await store.send(\.path[id:0].detail.destination.alert.confirmButtonTapped) {
+        await store.send(\.path[id: 0].detail.deleteButtonTapped)
+        await store.send(\.path[id: 0].detail.destination.alert.confirmButtonTapped) {
             $0.path[id: 0, case: \.detail]?.destination = nil
             $0.syncUpsList.syncUps = []
         }

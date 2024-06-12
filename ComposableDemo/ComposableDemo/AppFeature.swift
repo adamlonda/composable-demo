@@ -1,4 +1,3 @@
-
 import ComposableArchitecture
 import SwiftUI
 
@@ -32,12 +31,12 @@ import SwiftUI
         Scope(state: \.syncUpsList, action: \.syncUpsList) {
             SyncUpsList()
         }
-        Reduce { state, action in
+        Reduce { _, action in
             switch action {
-                case .path:
-                    return .none
-                case .syncUpsList:
-                    return .none
+            case .path:
+                return .none
+            case .syncUpsList:
+                return .none
             }
         }
         .forEach(\.path, action: \.path)
@@ -59,12 +58,12 @@ struct AppView: View {
             )
         } destination: { store in
             switch store.case {
-                case let .detail(detailStore):
-                    SyncUpDetailView(store: detailStore)
-                case let .meeting(meeting, syncUp: syncUp):
-                    MeetingView(meeting: meeting, syncUp: syncUp)
-                case let .record(recordStore):
-                    RecordMeetingView(store: recordStore)
+            case let .detail(detailStore):
+                SyncUpDetailView(store: detailStore)
+            case let .meeting(meeting, syncUp: syncUp):
+                MeetingView(meeting: meeting, syncUp: syncUp)
+            case let .record(recordStore):
+                RecordMeetingView(store: recordStore)
             }
         }
     }
@@ -79,7 +78,7 @@ struct AppView: View {
             attendees: [
                 Attendee(id: Attendee.ID(), name: "Blob"),
                 Attendee(id: Attendee.ID(), name: "Blob Jr"),
-                Attendee(id: Attendee.ID(), name: "Blob Sr"),
+                Attendee(id: Attendee.ID(), name: "Blob Sr")
             ],
             duration: .seconds(6),
             meetings: [],

@@ -1,4 +1,3 @@
-
 import ComposableArchitecture
 @testable import ComposableDemo
 import XCTest
@@ -12,7 +11,7 @@ final class RecordMeetingTests: XCTestCase {
             id: SyncUp.ID(),
             attendees: [
                 Attendee(id: Attendee.ID(), name: "Blob"),
-                Attendee(id: Attendee.ID(), name: "Blob Jr"),
+                Attendee(id: Attendee.ID(), name: "Blob Jr")
             ],
             duration: .seconds(4),
             title: "Morning Sync"

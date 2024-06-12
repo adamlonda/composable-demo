@@ -1,4 +1,3 @@
-
 import SwiftUI
 
 struct MeetingView: View {
@@ -41,7 +40,7 @@ struct MeetingView: View {
             attendees: [
                 Attendee(id: Attendee.ID(), name: "Blob"),
                 Attendee(id: Attendee.ID(), name: "Blob Jr."),
-                Attendee(id: Attendee.ID(), name: "Blob Sr."),
+                Attendee(id: Attendee.ID(), name: "Blob Sr.")
             ],
             title: "Point-Free Morning Sync"
         )

@@ -1,8 +1,6 @@
-
 import ComposableArchitecture
 @testable import ComposableDemo
 import XCTest
-
 
 class SyncUpsListTests: XCTestCase {
 
@@ -21,7 +19,7 @@ class SyncUpsListTests: XCTestCase {
             id: SyncUp.ID(UUID(0)),
             attendees: [
                 Attendee(id: Attendee.ID(), name: "Blob"),
-                Attendee(id: Attendee.ID(), name: "Blob Jr."),
+                Attendee(id: Attendee.ID(), name: "Blob Jr.")
             ],
             title: "Point-Free morning sync"
         )
@@ -48,7 +46,7 @@ class SyncUpsListTests: XCTestCase {
             id: SyncUp.ID(UUID(0)),
             attendees: [
                 Attendee(id: Attendee.ID(), name: "Blob"),
-                Attendee(id: Attendee.ID(), name: "Blob Jr."),
+                Attendee(id: Attendee.ID(), name: "Blob Jr.")
             ],
             title: "Point-Free morning sync"
         )

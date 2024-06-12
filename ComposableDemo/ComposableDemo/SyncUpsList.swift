@@ -1,4 +1,3 @@
-
 import Foundation
 import ComposableArchitecture
 import SwiftUI
@@ -28,24 +27,24 @@ import SwiftUI
     var body: some ReducerOf<Self> {
         Reduce<State, Action> { state, action in
             switch action {
-                case .addSyncUpButtonTapped:
-                    state.addSyncUp = SyncUpForm.State(syncUp: SyncUp(id: SyncUp.ID(uuid())))
-                    return .none
-                case .addSyncUp:
-                    return .none
-                case .confirmAddButtonTapped:
-                    guard let newSyncUp = state.addSyncUp?.syncUp else { return .none }
-                    state.addSyncUp = nil
-                    state.syncUps.append(newSyncUp)
-                    return .none
-                case .discardButtonTapped:
-                    state.addSyncUp = nil
-                    return .none
-                case let .onDelete(indexSet):
-                    state.syncUps.remove(atOffsets: indexSet)
-                    return .none
-                case .syncUpTapped:
-                    return .none
+            case .addSyncUpButtonTapped:
+                state.addSyncUp = SyncUpForm.State(syncUp: SyncUp(id: SyncUp.ID(uuid())))
+                return .none
+            case .addSyncUp:
+                return .none
+            case .confirmAddButtonTapped:
+                guard let newSyncUp = state.addSyncUp?.syncUp else { return .none }
+                state.addSyncUp = nil
+                state.syncUps.append(newSyncUp)
+                return .none
+            case .discardButtonTapped:
+                state.addSyncUp = nil
+                return .none
+            case let .onDelete(indexSet):
+                state.syncUps.remove(atOffsets: indexSet)
+                return .none
+            case .syncUpTapped:
+                return .none
             }
         }
         .ifLet(\.$addSyncUp, action: \.addSyncUp) {
@@ -167,7 +166,7 @@ struct SyncUpsListView: View {
                             attendees: [
                                 Attendee(id: Attendee.ID(), name: "Blob"),
                                 Attendee(id: Attendee.ID(), name: "Blob Jr."),
-                                Attendee(id: Attendee.ID(), name: "Blob Sr."),
+                                Attendee(id: Attendee.ID(), name: "Blob Sr.")
                             ],
                             title: "Point-Free Morning Sync"
                         )

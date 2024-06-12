@@ -1,4 +1,3 @@
-
 import ComposableArchitecture
 import SwiftUI
 
@@ -11,11 +10,11 @@ import SwiftUI
     @ObservableState struct State: Equatable {
         var focus: Field? = .title
         var syncUp: SyncUp
+    }
 
-        enum Field: Hashable {
-            case attendee(Attendee.ID)
-            case title
-        }
+    enum Field: Hashable {
+        case attendee(Attendee.ID)
+        case title
     }
 
     enum Action: BindableAction {
@@ -31,23 +30,23 @@ import SwiftUI
 
         Reduce { state, action in
             switch action {
-                case .addAttendeeButtonTapped:
-                    let attendee = Attendee(id: Attendee.ID(uuid()))
-                    state.syncUp.attendees.append(attendee)
-                    state.focus = .attendee(attendee.id)
-                    return .none
+            case .addAttendeeButtonTapped:
+                let attendee = Attendee(id: Attendee.ID(uuid()))
+                state.syncUp.attendees.append(attendee)
+                state.focus = .attendee(attendee.id)
+                return .none
 
-                case .binding:
-                    return .none
+            case .binding:
+                return .none
 
-                case let .onDeleteAttendees(indices):
-                    state.syncUp.attendees.remove(atOffsets: indices)
-                    guard !state.syncUp.attendees.isEmpty, let firstIndex = indices.first else {
-                        return .none
-                    }
-                    let index = min(firstIndex, state.syncUp.attendees.count - 1)
-                    state.focus = .attendee(state.syncUp.attendees[index].id)
+            case let .onDeleteAttendees(indices):
+                state.syncUp.attendees.remove(atOffsets: indices)
+                guard !state.syncUp.attendees.isEmpty, let firstIndex = indices.first else {
                     return .none
+                }
+                let index = min(firstIndex, state.syncUp.attendees.count - 1)
+                state.focus = .attendee(state.syncUp.attendees[index].id)
+                return .none
             }
         }
     }
@@ -58,7 +57,7 @@ import SwiftUI
 struct SyncUpFormView: View {
 
     @Bindable var store: StoreOf<SyncUpForm>
-    @FocusState var focus: SyncUpForm.State.Field?
+    @FocusState var focus: SyncUpForm.Field?
 
     var body: some View {
         Form {
@@ -137,7 +136,7 @@ extension Duration {
                     attendees: [
                         Attendee(id: Attendee.ID(), name: "Blob"),
                         Attendee(id: Attendee.ID(), name: "Blob Jr."),
-                        Attendee(id: Attendee.ID(), name: "Blob Sr."),
+                        Attendee(id: Attendee.ID(), name: "Blob Sr.")
                     ],
                     title: "Point-Free Morning Sync"
                 )

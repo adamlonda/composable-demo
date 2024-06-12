@@ -147,6 +147,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				91825F952C19D68800AF7F6D /* PBXTargetDependency */,
 			);
 			name = ComposableDemo;
 			packageProductDependencies = (
@@ -168,6 +169,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				91825F972C19D69500AF7F6D /* PBXTargetDependency */,
 				91D02CC42BF37138004EE097 /* PBXTargetDependency */,
 			);
 			name = ComposableDemoTests;
@@ -206,6 +208,7 @@
 			packageReferences = (
 				91D02CDF2BF3776F004EE097 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
 				911053B62BF4B5FB00E61C94 /* XCRemoteSwiftPackageReference "swift-tagged" */,
+				91825F932C19D30000AF7F6D /* XCRemoteSwiftPackageReference "SwiftLint" */,
 			);
 			productRefGroup = 91D02CB32BF37134004EE097 /* Products */;
 			projectDirPath = "";
@@ -267,6 +270,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		91825F952C19D68800AF7F6D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 91825F942C19D68800AF7F6D /* SwiftLintBuildToolPlugin */;
+		};
+		91825F972C19D69500AF7F6D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 91825F962C19D69500AF7F6D /* SwiftLintBuildToolPlugin */;
+		};
 		91D02CC42BF37138004EE097 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 91D02CB12BF37134004EE097 /* ComposableDemo */;
@@ -537,6 +548,14 @@
 				minimumVersion = 0.10.0;
 			};
 		};
+		91825F932C19D30000AF7F6D /* XCRemoteSwiftPackageReference "SwiftLint" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/SwiftLint";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.55.1;
+			};
+		};
 		91D02CDF2BF3776F004EE097 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
@@ -552,6 +571,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 911053B62BF4B5FB00E61C94 /* XCRemoteSwiftPackageReference "swift-tagged" */;
 			productName = Tagged;
+		};
+		91825F942C19D68800AF7F6D /* SwiftLintBuildToolPlugin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 91825F932C19D30000AF7F6D /* XCRemoteSwiftPackageReference "SwiftLint" */;
+			productName = "plugin:SwiftLintBuildToolPlugin";
+		};
+		91825F962C19D69500AF7F6D /* SwiftLintBuildToolPlugin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 91825F932C19D30000AF7F6D /* XCRemoteSwiftPackageReference "SwiftLint" */;
+			productName = "plugin:SwiftLintBuildToolPlugin";
 		};
 		91D02CE02BF3776F004EE097 /* ComposableArchitecture */ = {
 			isa = XCSwiftPackageProductDependency;

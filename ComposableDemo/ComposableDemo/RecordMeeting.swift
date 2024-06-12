@@ -1,4 +1,3 @@
-
 import ComposableArchitecture
 import SwiftUI
 
@@ -9,7 +8,7 @@ import SwiftUI
 @Reducer struct RecordMeeting {
 
     @ObservableState struct State: Equatable {
-        @Presents var alert: AlertState<Action.Alert>?
+        @Presents var alert: AlertState<Alert>?
         var secondsElapsed = 0
         var speakerIndex = 0
         @Shared var syncUp: SyncUp
@@ -26,11 +25,11 @@ import SwiftUI
         case nextButtonTapped
         case onAppear
         case timerTick
+    }
 
-        enum Alert {
-            case discardMeeting
-            case saveMeeting
-        }
+    enum Alert {
+        case discardMeeting
+        case saveMeeting
     }
 
     @Dependency(\.continuousClock) var clock
@@ -41,51 +40,51 @@ import SwiftUI
     var body: some ReducerOf<Self> {
         Reduce { state, action in
             switch action {
-                case .alert(.presented(.discardMeeting)):
-                    return .run { _ in await dismiss() }
-                case .alert(.presented(.saveMeeting)):
-                    state.syncUp.meetings.insert(
-                        Meeting(id: Meeting.ID(uuid()), date: now, transcript: state.transcript),
-                        at: 0
-                    )
-                    return .run { _ in await dismiss() }
-                case .alert:
-                    return .none
-                case .endMeetingButtonTapped:
+            case .alert(.presented(.discardMeeting)):
+                return .run { _ in await dismiss() }
+            case .alert(.presented(.saveMeeting)):
+                state.syncUp.meetings.insert(
+                    Meeting(id: Meeting.ID(uuid()), date: now, transcript: state.transcript),
+                    at: 0
+                )
+                return .run { _ in await dismiss() }
+            case .alert:
+                return .none
+            case .endMeetingButtonTapped:
+                state.alert = .endMeeting
+                return .none
+            case .nextButtonTapped:
+                guard state.speakerIndex < state.syncUp.attendees.count - 1 else {
                     state.alert = .endMeeting
                     return .none
-                case .nextButtonTapped:
-                    guard state.speakerIndex < state.syncUp.attendees.count - 1 else {
-                        state.alert = .endMeeting
-                        return .none
+                }
+                state.speakerIndex += 1
+                state.secondsElapsed = state.speakerIndex
+                    * Int(state.syncUp.durationPerAttendee.components.seconds)
+                return .none
+            case .onAppear:
+                return .run { send in
+                    for await _ in clock.timer(interval: .seconds(1)) {
+                        await send(.timerTick)
+                    }
+                }
+            case .timerTick:
+                guard state.alert == nil else {
+                    return .none
+                }
+                state.secondsElapsed += 1
+                let secondsPerAttendee = Int(state.syncUp.durationPerAttendee.components.seconds)
+                if state.secondsElapsed.isMultiple(of: secondsPerAttendee) {
+                    if state.secondsElapsed == state.syncUp.duration.components.seconds {
+                        state.syncUp.meetings.insert(
+                            Meeting(id: Meeting.ID(uuid()), date: now, transcript: state.transcript),
+                            at: 0
+                        )
+                        return .run { _ in await dismiss() }
                     }
                     state.speakerIndex += 1
-                    state.secondsElapsed = state.speakerIndex 
-                        * Int(state.syncUp.durationPerAttendee.components.seconds)
-                    return .none
-                case .onAppear:
-                    return .run { send in
-                        for await _ in clock.timer(interval: .seconds(1)) {
-                            await send(.timerTick)
-                        }
-                    }
-                case .timerTick:
-                    guard state.alert == nil else {
-                        return .none
-                    }
-                    state.secondsElapsed += 1
-                    let secondsPerAttendee = Int(state.syncUp.durationPerAttendee.components.seconds)
-                    if state.secondsElapsed.isMultiple(of: secondsPerAttendee) {
-                        if state.secondsElapsed == state.syncUp.duration.components.seconds {
-                            state.syncUp.meetings.insert(
-                                Meeting(id: Meeting.ID(uuid()), date: now, transcript: state.transcript),
-                                at: 0
-                            )
-                            return .run { _ in await dismiss() }
-                        }
-                        state.speakerIndex += 1
-                    }
-                    return .none
+                }
+                return .none
             }
         }
         .ifLet(\.$alert, action: \.alert)
@@ -94,7 +93,7 @@ import SwiftUI
 
 // MARK: - Alert Helpers
 
-extension AlertState where Action == RecordMeeting.Action.Alert {
+extension AlertState where Action == RecordMeeting.Alert {
     static var endMeeting: Self {
         Self {
             TextState("End meeting?")
@@ -246,7 +245,7 @@ struct MeetingTimerView: View {
                 .foregroundStyle(syncUp.theme.accentColor)
             }
             .overlay {
-                ForEach(Array(syncUp.attendees.enumerated()), id: \.element.id) { index, attendee in
+                ForEach(Array(syncUp.attendees.enumerated()), id: \.element.id) { index, _ in
                     if index < speakerIndex + 1 {
                         SpeakerArc(totalSpeakers: syncUp.attendees.count, speakerIndex: index)
                             .rotation(Angle(degrees: -90))
@@ -328,7 +327,7 @@ struct MeetingFooterView: View {
                             attendees: [
                                 Attendee(id: Attendee.ID(), name: "Blob"),
                                 Attendee(id: Attendee.ID(), name: "Blob Jr."),
-                                Attendee(id: Attendee.ID(), name: "Blob Sr."),
+                                Attendee(id: Attendee.ID(), name: "Blob Sr.")
                             ],
                             title: "Point-Free Morning Sync"
                         )

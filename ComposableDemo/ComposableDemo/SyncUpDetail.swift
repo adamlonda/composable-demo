@@ -1,4 +1,3 @@
-
 import ComposableArchitecture
 import SwiftUI
 
@@ -11,10 +10,10 @@ import SwiftUI
     @Reducer(state: .equatable) enum Destination {
         case alert(AlertState<Alert>)
         case edit(SyncUpForm)
+    }
 
-        @CasePathable enum Alert {
-            case confirmButtonTapped
-        }
+    @CasePathable enum Alert {
+        case confirmButtonTapped
     }
 
     @ObservableState struct State: Equatable {
@@ -35,31 +34,31 @@ import SwiftUI
     var body: some ReducerOf<Self> {
         Reduce { state, action in
             switch action {
-                case .destination(.presented(.alert(.confirmButtonTapped))):
-                    @Shared(.syncUps) var syncUps: IdentifiedArrayOf<SyncUp> = []
-                    syncUps.remove(id: state.syncUp.id)
-                    return .run { _ in await dismiss() }
+            case .destination(.presented(.alert(.confirmButtonTapped))):
+                @Shared(.syncUps) var syncUps: IdentifiedArrayOf<SyncUp> = []
+                syncUps.remove(id: state.syncUp.id)
+                return .run { _ in await dismiss() }
 
-                case .destination:
-                    return .none
+            case .destination:
+                return .none
 
-                case .cancelEditButtonTapped:
-                    state.destination = nil
-                    return .none
+            case .cancelEditButtonTapped:
+                state.destination = nil
+                return .none
 
-                case .deleteButtonTapped:
-                    state.destination = .alert(.deleteSyncUp)
-                    return .none
+            case .deleteButtonTapped:
+                state.destination = .alert(.deleteSyncUp)
+                return .none
 
-                case .doneEditingButtonTapped:
-                    guard let editedSyncUp = state.destination?.edit?.syncUp else { return .none }
-                    state.syncUp = editedSyncUp
-                    state.destination = nil
-                    return .none
+            case .doneEditingButtonTapped:
+                guard let editedSyncUp = state.destination?.edit?.syncUp else { return .none }
+                state.syncUp = editedSyncUp
+                state.destination = nil
+                return .none
 
-                case .editButtonTapped:
-                    state.destination = .edit(SyncUpForm.State(syncUp: state.syncUp))
-                    return .none
+            case .editButtonTapped:
+                state.destination = .edit(SyncUpForm.State(syncUp: state.syncUp))
+                return .none
             }
         }
         .ifLet(\.$destination, action: \.destination)
@@ -68,7 +67,7 @@ import SwiftUI
 
 // MARK: - Reducer Convenience
 
-extension AlertState where Action == SyncUpDetail.Destination.Alert {
+extension AlertState where Action == SyncUpDetail.Alert {
 
     static let deleteSyncUp = Self {
         TextState("Delete?")
@@ -197,7 +196,7 @@ struct SyncUpDetailView: View {
                             attendees: [
                                 Attendee(id: Attendee.ID(), name: "Blob"),
                                 Attendee(id: Attendee.ID(), name: "Blob Jr."),
-                                Attendee(id: Attendee.ID(), name: "Blob Sr."),
+                                Attendee(id: Attendee.ID(), name: "Blob Sr.")
                             ],
                             title: "Point-Free Morning Sync"
                         )
