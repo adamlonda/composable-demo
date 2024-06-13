@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		910B7F102C0C8FAF0004AEC0 /* SyncUpDetailTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910B7F0F2C0C8FAF0004AEC0 /* SyncUpDetailTests.swift */; };
-		911053B52BF4B07400E61C94 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911053B42BF4B07400E61C94 /* Models.swift */; };
-		911053B82BF4B5FB00E61C94 /* Tagged in Frameworks */ = {isa = PBXBuildFile; productRef = 911053B72BF4B5FB00E61C94 /* Tagged */; };
 		911053BA2BF4C59C00E61C94 /* SyncUpsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911053B92BF4C59B00E61C94 /* SyncUpsList.swift */; };
 		912523FB2C07760B0024BFBF /* SyncUpDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912523FA2C07760B0024BFBF /* SyncUpDetail.swift */; };
 		912F9A9E2BF78BD700E67821 /* SyncUpForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912F9A9D2BF78BD700E67821 /* SyncUpForm.swift */; };
@@ -23,6 +21,7 @@
 		91D02CBA2BF37137004EE097 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91D02CB92BF37137004EE097 /* Assets.xcassets */; };
 		91D02CBD2BF37137004EE097 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91D02CBC2BF37137004EE097 /* Preview Assets.xcassets */; };
 		91D02CE12BF3776F004EE097 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 91D02CE02BF3776F004EE097 /* ComposableArchitecture */; };
+		91D431F42C1B2A190084FE0E /* DemoModels in Frameworks */ = {isa = PBXBuildFile; productRef = 91D431F32C1B2A190084FE0E /* DemoModels */; };
 		91ED86892C1372A2002A5554 /* RecordMeeting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91ED86882C1372A2002A5554 /* RecordMeeting.swift */; };
 /* End PBXBuildFile section */
 
@@ -38,12 +37,12 @@
 
 /* Begin PBXFileReference section */
 		910B7F0F2C0C8FAF0004AEC0 /* SyncUpDetailTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncUpDetailTests.swift; sourceTree = "<group>"; };
-		911053B42BF4B07400E61C94 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		911053B92BF4C59B00E61C94 /* SyncUpsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncUpsList.swift; sourceTree = "<group>"; };
 		912523FA2C07760B0024BFBF /* SyncUpDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncUpDetail.swift; sourceTree = "<group>"; };
 		912F9A9D2BF78BD700E67821 /* SyncUpForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncUpForm.swift; sourceTree = "<group>"; };
 		91312E462BFF63DB00AC43A3 /* SyncUpFormTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncUpFormTests.swift; sourceTree = "<group>"; };
 		91470F3B2C0E08B600EA99F9 /* AppFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFeature.swift; sourceTree = "<group>"; };
+		915633582C1B01AD00E77EAE /* DemoModels */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = DemoModels; sourceTree = "<group>"; };
 		915D5E9C2C171CEC00E55B52 /* RecordMeetingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordMeetingTests.swift; sourceTree = "<group>"; };
 		919F05CB2C109FE700892BB6 /* MeetingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingView.swift; sourceTree = "<group>"; };
 		91AC18CC2C11B1FD00DD6285 /* AppFeatureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFeatureTests.swift; sourceTree = "<group>"; };
@@ -62,8 +61,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				911053B82BF4B5FB00E61C94 /* Tagged in Frameworks */,
 				91D02CE12BF3776F004EE097 /* ComposableArchitecture in Frameworks */,
+				91D431F42C1B2A190084FE0E /* DemoModels in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,10 +79,12 @@
 		91D02CA92BF37134004EE097 = {
 			isa = PBXGroup;
 			children = (
+				915633582C1B01AD00E77EAE /* DemoModels */,
 				91E1D76E2C17502300E3D406 /* ComposableDemo.xctestplan */,
 				91D02CB42BF37134004EE097 /* ComposableDemo */,
 				91D02CC52BF37138004EE097 /* ComposableDemoTests */,
 				91D02CB32BF37134004EE097 /* Products */,
+				91D431F22C1B2A190084FE0E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -102,7 +103,6 @@
 				91D02CB52BF37134004EE097 /* ComposableDemoApp.swift */,
 				91D02CB92BF37137004EE097 /* Assets.xcassets */,
 				91D02CBB2BF37137004EE097 /* Preview Content */,
-				911053B42BF4B07400E61C94 /* Models.swift */,
 				911053B92BF4C59B00E61C94 /* SyncUpsList.swift */,
 				912F9A9D2BF78BD700E67821 /* SyncUpForm.swift */,
 				912523FA2C07760B0024BFBF /* SyncUpDetail.swift */,
@@ -133,6 +133,13 @@
 			path = ComposableDemoTests;
 			sourceTree = "<group>";
 		};
+		91D431F22C1B2A190084FE0E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -152,7 +159,7 @@
 			name = ComposableDemo;
 			packageProductDependencies = (
 				91D02CE02BF3776F004EE097 /* ComposableArchitecture */,
-				911053B72BF4B5FB00E61C94 /* Tagged */,
+				91D431F32C1B2A190084FE0E /* DemoModels */,
 			);
 			productName = ComposableDemo;
 			productReference = 91D02CB22BF37134004EE097 /* ComposableDemo.app */;
@@ -207,7 +214,6 @@
 			mainGroup = 91D02CA92BF37134004EE097;
 			packageReferences = (
 				91D02CDF2BF3776F004EE097 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
-				911053B62BF4B5FB00E61C94 /* XCRemoteSwiftPackageReference "swift-tagged" */,
 				91825F932C19D30000AF7F6D /* XCRemoteSwiftPackageReference "SwiftLint" */,
 			);
 			productRefGroup = 91D02CB32BF37134004EE097 /* Products */;
@@ -245,7 +251,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				919F05CC2C109FE700892BB6 /* MeetingView.swift in Sources */,
-				911053B52BF4B07400E61C94 /* Models.swift in Sources */,
 				912523FB2C07760B0024BFBF /* SyncUpDetail.swift in Sources */,
 				912F9A9E2BF78BD700E67821 /* SyncUpForm.swift in Sources */,
 				91470F3C2C0E08B600EA99F9 /* AppFeature.swift in Sources */,
@@ -540,14 +545,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		911053B62BF4B5FB00E61C94 /* XCRemoteSwiftPackageReference "swift-tagged" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/pointfreeco/swift-tagged";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.10.0;
-			};
-		};
 		91825F932C19D30000AF7F6D /* XCRemoteSwiftPackageReference "SwiftLint" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/SwiftLint";
@@ -567,11 +564,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		911053B72BF4B5FB00E61C94 /* Tagged */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 911053B62BF4B5FB00E61C94 /* XCRemoteSwiftPackageReference "swift-tagged" */;
-			productName = Tagged;
-		};
 		91825F942C19D68800AF7F6D /* SwiftLintBuildToolPlugin */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 91825F932C19D30000AF7F6D /* XCRemoteSwiftPackageReference "SwiftLint" */;
@@ -586,6 +578,10 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 91D02CDF2BF3776F004EE097 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
 			productName = ComposableArchitecture;
+		};
+		91D431F32C1B2A190084FE0E /* DemoModels */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DemoModels;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -1,5 +1,6 @@
 import ComposableArchitecture
 @testable import ComposableDemo
+import DemoModels
 import XCTest
 
 class SyncUpsListTests: XCTestCase {

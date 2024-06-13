@@ -7,6 +7,10 @@ A sample iOS app based on [Pointfree Composable Architecture tutorial](https://p
 * iOS 17.4
 * Xcode 15.4 (15F31d)
 
+## Swift Package Modules
+
+* `DemoModels` package containing data structures & enums
+
 ## Third-party Dependencies
 
 * [Composable Architecture](https://github.com/pointfreeco/swift-composable-architecture) 1.10.4

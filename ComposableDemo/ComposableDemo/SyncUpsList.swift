@@ -1,3 +1,4 @@
+@preconcurrency import DemoModels
 import Foundation
 import ComposableArchitecture
 import SwiftUI

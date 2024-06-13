@@ -1,5 +1,6 @@
 import ComposableArchitecture
 @testable import ComposableDemo
+@preconcurrency import DemoModels
 import XCTest
 
 final class AppFeatureTests: XCTestCase {

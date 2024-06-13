@@ -1,4 +1,5 @@
 import ComposableArchitecture
+@preconcurrency import DemoModels
 import SwiftUI
 
 #warning("TODO: Split Reducers / Views into separate files / packages ❔")
