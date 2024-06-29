@@ -6,6 +6,7 @@
 //
 
 import ComposableArchitecture
+import DemoReducers
 import SwiftUI
 
 #warning("TODO: Implement speech recognition feature, when it's available in P3 tutorial 🎗️")
@@ -13,8 +14,8 @@ import SwiftUI
 @main
 struct ComposableDemoApp: App {
 
-    @MainActor static let store = Store(initialState: AppFeature.State()) {
-        AppFeature()
+    @MainActor static let store = Store(initialState: AppFeatureReducer.State()) {
+        AppFeatureReducer()
     }
 
     var body: some Scene {

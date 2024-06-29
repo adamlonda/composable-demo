@@ -10,6 +10,8 @@ A sample iOS app based on [Pointfree Composable Architecture tutorial](https://p
 ## Swift Package Modules
 
 * `DemoModels` package containing data structures & enums
+* `DemoReducers` package containing reducers with unit tests
+* `DemoStorage` package storage extensions to be used
 
 ## Third-party Dependencies
 

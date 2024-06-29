@@ -1,9 +1,9 @@
 import ComposableArchitecture
-@testable import ComposableDemo
 import DemoModels
+import DemoReducers
 import XCTest
 
-final class RecordMeetingTests: XCTestCase {
+final class RecordMeetingReducerTests: XCTestCase {
 
     @MainActor func testTimerFinishes() async {
         let dismissed = self.expectation(description: "dismissed")
@@ -18,9 +18,9 @@ final class RecordMeetingTests: XCTestCase {
             title: "Morning Sync"
         )
         let store = TestStore(
-            initialState: RecordMeeting.State(syncUp: Shared(syncUp))
+            initialState: RecordMeetingReducer.State(syncUp: Shared(syncUp))
         ) {
-            RecordMeeting()
+            RecordMeetingReducer()
         } withDependencies: {
             $0.continuousClock = clock
             $0.date.now = Date(timeIntervalSince1970: 1234567890)

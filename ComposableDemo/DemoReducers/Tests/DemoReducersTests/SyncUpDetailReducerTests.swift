@@ -1,21 +1,21 @@
 import ComposableArchitecture
-@testable import ComposableDemo
 import DemoModels
+@testable import DemoReducers
 import XCTest
 
-class SyncUpDetailTests: XCTestCase {
+class SyncUpDetailReducerTests: XCTestCase {
 
     @MainActor func testEdit() async {
         let syncUp = SyncUp(
             id: SyncUp.ID(),
             title: "Point-Free Morning Sync"
         )
-        let store = TestStore(initialState: SyncUpDetail.State(syncUp: Shared(syncUp))) {
-            SyncUpDetail()
+        let store = TestStore(initialState: SyncUpDetailReducer.State(syncUp: Shared(syncUp))) {
+            SyncUpDetailReducer()
         }
 
         await store.send(.editButtonTapped) {
-            $0.destination = .edit(SyncUpForm.State(syncUp: syncUp))
+            $0.destination = .edit(SyncUpFormReducer.State(syncUp: syncUp))
         }
 
         var editedSyncUp = syncUp
@@ -36,8 +36,8 @@ class SyncUpDetailTests: XCTestCase {
             id: SyncUp.ID(),
             title: "Point-Free Morning Sync"
         )
-        let store = TestStore(initialState: SyncUpDetail.State(syncUp: Shared(syncUp))) {
-            SyncUpDetail()
+        let store = TestStore(initialState: SyncUpDetailReducer.State(syncUp: Shared(syncUp))) {
+            SyncUpDetailReducer()
         }
 
         await store.send(.deleteButtonTapped) {

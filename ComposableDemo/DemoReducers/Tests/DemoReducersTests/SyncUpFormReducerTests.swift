@@ -1,19 +1,19 @@
 import ComposableArchitecture
-@testable import ComposableDemo
 import DemoModels
+import DemoReducers
 import XCTest
 
-class SyncUpFormTests: XCTestCase {
+class SyncUpFormReducerTests: XCTestCase {
 
     // MARK: - Add Attendee
 
     @MainActor func testAddAttendee() async {
         let store = TestStore(
-            initialState: SyncUpForm.State(
+            initialState: SyncUpFormReducer.State(
                 syncUp: SyncUp(id: SyncUp.ID())
             )
         ) {
-            SyncUpForm()
+            SyncUpFormReducer()
         } withDependencies: {
             $0.uuid = .incrementing
         }
@@ -29,7 +29,7 @@ class SyncUpFormTests: XCTestCase {
 
     @MainActor func testRemoveAttendee() async {
         let store = TestStore(
-            initialState: SyncUpForm.State(
+            initialState: SyncUpFormReducer.State(
                 syncUp: SyncUp(
                     id: SyncUp.ID(),
                     attendees: [
@@ -39,7 +39,7 @@ class SyncUpFormTests: XCTestCase {
                 )
             )
         ) {
-            SyncUpForm()
+            SyncUpFormReducer()
         }
 
         await store.send(.onDeleteAttendees([0])) {
@@ -53,7 +53,7 @@ class SyncUpFormTests: XCTestCase {
         let attendee2 = Attendee(id: Attendee.ID())
 
         let store = TestStore(
-            initialState: SyncUpForm.State(
+            initialState: SyncUpFormReducer.State(
                 focus: .attendee(attendee1.id),
                 syncUp: SyncUp(
                     id: SyncUp.ID(),
@@ -61,7 +61,7 @@ class SyncUpFormTests: XCTestCase {
                 )
             )
         ) {
-            SyncUpForm()
+            SyncUpFormReducer()
         }
 
         await store.send(.onDeleteAttendees([0])) {

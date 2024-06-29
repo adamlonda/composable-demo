@@ -7,53 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		910B7F102C0C8FAF0004AEC0 /* SyncUpDetailTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910B7F0F2C0C8FAF0004AEC0 /* SyncUpDetailTests.swift */; };
-		911053BA2BF4C59C00E61C94 /* SyncUpsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911053B92BF4C59B00E61C94 /* SyncUpsList.swift */; };
-		912523FB2C07760B0024BFBF /* SyncUpDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912523FA2C07760B0024BFBF /* SyncUpDetail.swift */; };
-		912F9A9E2BF78BD700E67821 /* SyncUpForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912F9A9D2BF78BD700E67821 /* SyncUpForm.swift */; };
-		91312E472BFF63DB00AC43A3 /* SyncUpFormTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91312E462BFF63DB00AC43A3 /* SyncUpFormTests.swift */; };
-		91470F3C2C0E08B600EA99F9 /* AppFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91470F3B2C0E08B600EA99F9 /* AppFeature.swift */; };
-		915D5E9D2C171CEC00E55B52 /* RecordMeetingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915D5E9C2C171CEC00E55B52 /* RecordMeetingTests.swift */; };
+		911053BA2BF4C59C00E61C94 /* SyncUpsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911053B92BF4C59B00E61C94 /* SyncUpsListView.swift */; };
+		912523FB2C07760B0024BFBF /* SyncUpDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912523FA2C07760B0024BFBF /* SyncUpDetailView.swift */; };
+		912F9A9E2BF78BD700E67821 /* SyncUpFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912F9A9D2BF78BD700E67821 /* SyncUpFormView.swift */; };
+		91470F3C2C0E08B600EA99F9 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91470F3B2C0E08B600EA99F9 /* AppView.swift */; };
 		919F05CC2C109FE700892BB6 /* MeetingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919F05CB2C109FE700892BB6 /* MeetingView.swift */; };
-		91AC18CD2C11B1FD00DD6285 /* AppFeatureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AC18CC2C11B1FD00DD6285 /* AppFeatureTests.swift */; };
-		91B9FD422BF66373001B448E /* SyncUpsListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B9FD412BF66372001B448E /* SyncUpsListTests.swift */; };
+		91B02BEA2C240A1B00E01224 /* DemoReducers in Frameworks */ = {isa = PBXBuildFile; productRef = 91B02BE92C240A1B00E01224 /* DemoReducers */; };
 		91D02CB62BF37134004EE097 /* ComposableDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D02CB52BF37134004EE097 /* ComposableDemoApp.swift */; };
 		91D02CBA2BF37137004EE097 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91D02CB92BF37137004EE097 /* Assets.xcassets */; };
 		91D02CBD2BF37137004EE097 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91D02CBC2BF37137004EE097 /* Preview Assets.xcassets */; };
 		91D02CE12BF3776F004EE097 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 91D02CE02BF3776F004EE097 /* ComposableArchitecture */; };
 		91D431F42C1B2A190084FE0E /* DemoModels in Frameworks */ = {isa = PBXBuildFile; productRef = 91D431F32C1B2A190084FE0E /* DemoModels */; };
-		91ED86892C1372A2002A5554 /* RecordMeeting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91ED86882C1372A2002A5554 /* RecordMeeting.swift */; };
+		91ED86892C1372A2002A5554 /* RecordMeetingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91ED86882C1372A2002A5554 /* RecordMeetingView.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		91D02CC32BF37138004EE097 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 91D02CAA2BF37134004EE097 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 91D02CB12BF37134004EE097;
-			remoteInfo = ComposableDemo;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		910B7F0F2C0C8FAF0004AEC0 /* SyncUpDetailTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncUpDetailTests.swift; sourceTree = "<group>"; };
-		911053B92BF4C59B00E61C94 /* SyncUpsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncUpsList.swift; sourceTree = "<group>"; };
-		912523FA2C07760B0024BFBF /* SyncUpDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncUpDetail.swift; sourceTree = "<group>"; };
-		912F9A9D2BF78BD700E67821 /* SyncUpForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncUpForm.swift; sourceTree = "<group>"; };
-		91312E462BFF63DB00AC43A3 /* SyncUpFormTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncUpFormTests.swift; sourceTree = "<group>"; };
-		91470F3B2C0E08B600EA99F9 /* AppFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFeature.swift; sourceTree = "<group>"; };
+		911053B92BF4C59B00E61C94 /* SyncUpsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncUpsListView.swift; sourceTree = "<group>"; };
+		912523FA2C07760B0024BFBF /* SyncUpDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncUpDetailView.swift; sourceTree = "<group>"; };
+		912F9A9D2BF78BD700E67821 /* SyncUpFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncUpFormView.swift; sourceTree = "<group>"; };
+		91470F3B2C0E08B600EA99F9 /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
 		915633582C1B01AD00E77EAE /* DemoModels */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = DemoModels; sourceTree = "<group>"; };
-		915D5E9C2C171CEC00E55B52 /* RecordMeetingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordMeetingTests.swift; sourceTree = "<group>"; };
 		919F05CB2C109FE700892BB6 /* MeetingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingView.swift; sourceTree = "<group>"; };
-		91AC18CC2C11B1FD00DD6285 /* AppFeatureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFeatureTests.swift; sourceTree = "<group>"; };
-		91B9FD412BF66372001B448E /* SyncUpsListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncUpsListTests.swift; sourceTree = "<group>"; };
 		91D02CB22BF37134004EE097 /* ComposableDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ComposableDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91D02CB52BF37134004EE097 /* ComposableDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposableDemoApp.swift; sourceTree = "<group>"; };
 		91D02CB92BF37137004EE097 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		91D02CBC2BF37137004EE097 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		91D02CC22BF37138004EE097 /* ComposableDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ComposableDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		91E0E7D02C3025D400C1FAEF /* DemoStorage */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = DemoStorage; sourceTree = "<group>"; };
 		91E1D76E2C17502300E3D406 /* ComposableDemo.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = ComposableDemo.xctestplan; sourceTree = "<group>"; };
-		91ED86882C1372A2002A5554 /* RecordMeeting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordMeeting.swift; sourceTree = "<group>"; };
+		91ED86882C1372A2002A5554 /* RecordMeetingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordMeetingView.swift; sourceTree = "<group>"; };
+		91FF6F652C22EF220091F0CF /* DemoReducers */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = DemoReducers; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,15 +43,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91B02BEA2C240A1B00E01224 /* DemoReducers in Frameworks */,
 				91D02CE12BF3776F004EE097 /* ComposableArchitecture in Frameworks */,
 				91D431F42C1B2A190084FE0E /* DemoModels in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		91D02CBF2BF37138004EE097 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,9 +56,10 @@
 			isa = PBXGroup;
 			children = (
 				915633582C1B01AD00E77EAE /* DemoModels */,
+				91E0E7D02C3025D400C1FAEF /* DemoStorage */,
+				91FF6F652C22EF220091F0CF /* DemoReducers */,
 				91E1D76E2C17502300E3D406 /* ComposableDemo.xctestplan */,
 				91D02CB42BF37134004EE097 /* ComposableDemo */,
-				91D02CC52BF37138004EE097 /* ComposableDemoTests */,
 				91D02CB32BF37134004EE097 /* Products */,
 				91D431F22C1B2A190084FE0E /* Frameworks */,
 			);
@@ -92,7 +69,6 @@
 			isa = PBXGroup;
 			children = (
 				91D02CB22BF37134004EE097 /* ComposableDemo.app */,
-				91D02CC22BF37138004EE097 /* ComposableDemoTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -103,12 +79,12 @@
 				91D02CB52BF37134004EE097 /* ComposableDemoApp.swift */,
 				91D02CB92BF37137004EE097 /* Assets.xcassets */,
 				91D02CBB2BF37137004EE097 /* Preview Content */,
-				911053B92BF4C59B00E61C94 /* SyncUpsList.swift */,
-				912F9A9D2BF78BD700E67821 /* SyncUpForm.swift */,
-				912523FA2C07760B0024BFBF /* SyncUpDetail.swift */,
-				91470F3B2C0E08B600EA99F9 /* AppFeature.swift */,
+				911053B92BF4C59B00E61C94 /* SyncUpsListView.swift */,
+				912F9A9D2BF78BD700E67821 /* SyncUpFormView.swift */,
+				912523FA2C07760B0024BFBF /* SyncUpDetailView.swift */,
+				91470F3B2C0E08B600EA99F9 /* AppView.swift */,
 				919F05CB2C109FE700892BB6 /* MeetingView.swift */,
-				91ED86882C1372A2002A5554 /* RecordMeeting.swift */,
+				91ED86882C1372A2002A5554 /* RecordMeetingView.swift */,
 			);
 			path = ComposableDemo;
 			sourceTree = "<group>";
@@ -119,18 +95,6 @@
 				91D02CBC2BF37137004EE097 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		91D02CC52BF37138004EE097 /* ComposableDemoTests */ = {
-			isa = PBXGroup;
-			children = (
-				91B9FD412BF66372001B448E /* SyncUpsListTests.swift */,
-				91312E462BFF63DB00AC43A3 /* SyncUpFormTests.swift */,
-				910B7F0F2C0C8FAF0004AEC0 /* SyncUpDetailTests.swift */,
-				91AC18CC2C11B1FD00DD6285 /* AppFeatureTests.swift */,
-				915D5E9C2C171CEC00E55B52 /* RecordMeetingTests.swift */,
-			);
-			path = ComposableDemoTests;
 			sourceTree = "<group>";
 		};
 		91D431F22C1B2A190084FE0E /* Frameworks */ = {
@@ -160,29 +124,11 @@
 			packageProductDependencies = (
 				91D02CE02BF3776F004EE097 /* ComposableArchitecture */,
 				91D431F32C1B2A190084FE0E /* DemoModels */,
+				91B02BE92C240A1B00E01224 /* DemoReducers */,
 			);
 			productName = ComposableDemo;
 			productReference = 91D02CB22BF37134004EE097 /* ComposableDemo.app */;
 			productType = "com.apple.product-type.application";
-		};
-		91D02CC12BF37138004EE097 /* ComposableDemoTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 91D02CD92BF37138004EE097 /* Build configuration list for PBXNativeTarget "ComposableDemoTests" */;
-			buildPhases = (
-				91D02CBE2BF37138004EE097 /* Sources */,
-				91D02CBF2BF37138004EE097 /* Frameworks */,
-				91D02CC02BF37138004EE097 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				91825F972C19D69500AF7F6D /* PBXTargetDependency */,
-				91D02CC42BF37138004EE097 /* PBXTargetDependency */,
-			);
-			name = ComposableDemoTests;
-			productName = ComposableDemoTests;
-			productReference = 91D02CC22BF37138004EE097 /* ComposableDemoTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -196,10 +142,6 @@
 				TargetAttributes = {
 					91D02CB12BF37134004EE097 = {
 						CreatedOnToolsVersion = 15.2;
-					};
-					91D02CC12BF37138004EE097 = {
-						CreatedOnToolsVersion = 15.2;
-						TestTargetID = 91D02CB12BF37134004EE097;
 					};
 				};
 			};
@@ -221,7 +163,6 @@
 			projectRoot = "";
 			targets = (
 				91D02CB12BF37134004EE097 /* ComposableDemo */,
-				91D02CC12BF37138004EE097 /* ComposableDemoTests */,
 			);
 		};
 /* End PBXProject section */
@@ -236,13 +177,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		91D02CC02BF37138004EE097 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -251,24 +185,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				919F05CC2C109FE700892BB6 /* MeetingView.swift in Sources */,
-				912523FB2C07760B0024BFBF /* SyncUpDetail.swift in Sources */,
-				912F9A9E2BF78BD700E67821 /* SyncUpForm.swift in Sources */,
-				91470F3C2C0E08B600EA99F9 /* AppFeature.swift in Sources */,
-				911053BA2BF4C59C00E61C94 /* SyncUpsList.swift in Sources */,
-				91ED86892C1372A2002A5554 /* RecordMeeting.swift in Sources */,
+				912523FB2C07760B0024BFBF /* SyncUpDetailView.swift in Sources */,
+				912F9A9E2BF78BD700E67821 /* SyncUpFormView.swift in Sources */,
+				91470F3C2C0E08B600EA99F9 /* AppView.swift in Sources */,
+				911053BA2BF4C59C00E61C94 /* SyncUpsListView.swift in Sources */,
+				91ED86892C1372A2002A5554 /* RecordMeetingView.swift in Sources */,
 				91D02CB62BF37134004EE097 /* ComposableDemoApp.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		91D02CBE2BF37138004EE097 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				915D5E9D2C171CEC00E55B52 /* RecordMeetingTests.swift in Sources */,
-				91AC18CD2C11B1FD00DD6285 /* AppFeatureTests.swift in Sources */,
-				91B9FD422BF66373001B448E /* SyncUpsListTests.swift in Sources */,
-				91312E472BFF63DB00AC43A3 /* SyncUpFormTests.swift in Sources */,
-				910B7F102C0C8FAF0004AEC0 /* SyncUpDetailTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,15 +200,6 @@
 		91825F952C19D68800AF7F6D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			productRef = 91825F942C19D68800AF7F6D /* SwiftLintBuildToolPlugin */;
-		};
-		91825F972C19D69500AF7F6D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			productRef = 91825F962C19D69500AF7F6D /* SwiftLintBuildToolPlugin */;
-		};
-		91D02CC42BF37138004EE097 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 91D02CB12BF37134004EE097 /* ComposableDemo */;
-			targetProxy = 91D02CC32BF37138004EE097 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -472,46 +385,6 @@
 			};
 			name = Release;
 		};
-		91D02CDA2BF37138004EE097 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6KGZ86RN37;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = adamlonda.ComposableDemoTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ComposableDemo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ComposableDemo";
-			};
-			name = Debug;
-		};
-		91D02CDB2BF37138004EE097 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6KGZ86RN37;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = adamlonda.ComposableDemoTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ComposableDemo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ComposableDemo";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -529,15 +402,6 @@
 			buildConfigurations = (
 				91D02CD72BF37138004EE097 /* Debug */,
 				91D02CD82BF37138004EE097 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		91D02CD92BF37138004EE097 /* Build configuration list for PBXNativeTarget "ComposableDemoTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				91D02CDA2BF37138004EE097 /* Debug */,
-				91D02CDB2BF37138004EE097 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -569,10 +433,9 @@
 			package = 91825F932C19D30000AF7F6D /* XCRemoteSwiftPackageReference "SwiftLint" */;
 			productName = "plugin:SwiftLintBuildToolPlugin";
 		};
-		91825F962C19D69500AF7F6D /* SwiftLintBuildToolPlugin */ = {
+		91B02BE92C240A1B00E01224 /* DemoReducers */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 91825F932C19D30000AF7F6D /* XCRemoteSwiftPackageReference "SwiftLint" */;
-			productName = "plugin:SwiftLintBuildToolPlugin";
+			productName = DemoReducers;
 		};
 		91D02CE02BF3776F004EE097 /* ComposableArchitecture */ = {
 			isa = XCSwiftPackageProductDependency;

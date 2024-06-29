@@ -1,13 +1,13 @@
 import ComposableArchitecture
-@testable import ComposableDemo
 import DemoModels
+import DemoReducers
 import XCTest
 
-class SyncUpsListTests: XCTestCase {
+class SyncUpsListReducerTests: XCTestCase {
 
     @MainActor func testAddSyncUp_NonExhaustive() async {
-        let store = TestStore(initialState: SyncUpsList.State()) {
-            SyncUpsList()
+        let store = TestStore(initialState: SyncUpsListReducer.State()) {
+            SyncUpsListReducer()
         } withDependencies: {
             $0.uuid = .incrementing
         }
@@ -33,14 +33,14 @@ class SyncUpsListTests: XCTestCase {
     }
 
     @MainActor func testAddSyncUp() async {
-        let store = TestStore(initialState: SyncUpsList.State()) {
-            SyncUpsList()
+        let store = TestStore(initialState: SyncUpsListReducer.State()) {
+            SyncUpsListReducer()
         } withDependencies: {
             $0.uuid = .incrementing
         }
 
         await store.send(.addSyncUpButtonTapped) {
-            $0.addSyncUp = SyncUpForm.State(syncUp: SyncUp(id: SyncUp.ID(UUID(0))))
+            $0.addSyncUp = SyncUpFormReducer.State(syncUp: SyncUp(id: SyncUp.ID(UUID(0))))
         }
 
         let editedSyncUp = SyncUp(
@@ -64,7 +64,7 @@ class SyncUpsListTests: XCTestCase {
 
     @MainActor func testDeletion() async {
         let store = TestStore(
-            initialState: SyncUpsList.State(
+            initialState: SyncUpsListReducer.State(
                 syncUps: [
                     SyncUp(
                         id: SyncUp.ID(),
@@ -73,7 +73,7 @@ class SyncUpsListTests: XCTestCase {
                 ]
             )
         ) {
-            SyncUpsList()
+            SyncUpsListReducer()
         }
 
         await store.send(.onDelete([0])) {
