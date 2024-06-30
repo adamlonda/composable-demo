@@ -6,11 +6,19 @@ import Tagged
 extension PersistenceReaderKey
     where Self == PersistenceKeyDefault<FileStorageKey<IdentifiedArrayOf<SyncUp>>> {
 
-    public static func syncUps(url: URL) -> Self {
+    #warning("TODO: Implement custom PersistenceKey instead ❔")
+    public static func storage(url: URL) -> Self {
         PersistenceKeyDefault(.fileStorage(url), [])
     }
 
     public static var syncUps: Self {
-        syncUps(url: .documentsDirectory.appending(component: "sync-ups.json"))
+        storage(url: .documentsDirectory.appending(component: .syncUps))
+    }
+}
+
+extension StringProtocol where Self == String {
+
+    public static var syncUps: Self {
+        "sync-ups.json"
     }
 }

@@ -15,7 +15,7 @@ final class AppFeatureReducerTests: XCTestCase {
             ],
             title: "Point-Free Morning Sync"
         )
-        @Shared(.syncUps(url: .currentDirectory())) var syncUps = [syncUp]
+        @Shared(.storage(url: .currentDirectory())) var syncUps = [syncUp]
 
         let store = TestStore(initialState: AppFeatureReducer.State()) {
             AppFeatureReducer()
