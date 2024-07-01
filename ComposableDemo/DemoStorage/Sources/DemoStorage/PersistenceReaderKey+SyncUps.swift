@@ -3,10 +3,10 @@ import DemoModels
 import Foundation
 import Tagged
 
+#warning("TODO: Use .syncUpsStorage() instead 💡")
 extension PersistenceReaderKey
     where Self == PersistenceKeyDefault<FileStorageKey<IdentifiedArrayOf<SyncUp>>> {
 
-    #warning("TODO: Implement custom PersistenceKey instead ❔")
     public static func storage(url: URL) -> Self {
         PersistenceKeyDefault(.fileStorage(url), [])
     }
