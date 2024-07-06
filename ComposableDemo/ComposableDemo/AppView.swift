@@ -1,54 +1,15 @@
 import ComposableArchitecture
 @preconcurrency import DemoModels
+import DemoReducers
 import SwiftUI
 
-#warning("TODO: Split Reducers / Views into separate files / packages ❔")
-
-// MARK: - Reducer
-
-@Reducer struct AppFeature {
-
-    @Reducer enum Path {
-        case detail(SyncUpDetail)
-        case meeting(Meeting, syncUp: SyncUp)
-        case record(RecordMeeting)
-    }
-
-    @ObservableState struct State: Equatable {
-        var path = StackState<Path.State>()
-        var syncUpsList = SyncUpsList.State()
-
-        static func == (lhs: AppFeature.State, rhs: AppFeature.State) -> Bool {
-            lhs.path.ids == rhs.path.ids && lhs.syncUpsList == rhs.syncUpsList
-        }
-    }
-
-    enum Action {
-        case path(StackActionOf<Path>)
-        case syncUpsList(SyncUpsList.Action)
-    }
-
-    var body: some ReducerOf<Self> {
-        Scope(state: \.syncUpsList, action: \.syncUpsList) {
-            SyncUpsList()
-        }
-        Reduce { _, action in
-            switch action {
-            case .path:
-                return .none
-            case .syncUpsList:
-                return .none
-            }
-        }
-        .forEach(\.path, action: \.path)
-    }
-}
+#warning("TODO: Move Views into separate package 💡")
 
 // MARK: - View
 
 struct AppView: View {
 
-    @Bindable var store: StoreOf<AppFeature>
+    @Bindable var store: StoreOf<AppFeatureReducer>
 
     var body: some View {
         NavigationStack(
@@ -90,9 +51,9 @@ struct AppView: View {
 
     return AppView(
         store: Store(
-            initialState: AppFeature.State()
+            initialState: AppFeatureReducer.State()
         ) {
-            AppFeature()
+            AppFeatureReducer()
         }
     )
 }

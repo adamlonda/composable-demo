@@ -1,9 +1,9 @@
 import ComposableArchitecture
-@testable import ComposableDemo
 @preconcurrency import DemoModels
+@testable import DemoReducers
 import XCTest
 
-final class AppFeatureTests: XCTestCase {
+final class AppFeatureReducerTests: XCTestCase {
 
     @MainActor func testDelete() async throws {
         let syncUp = SyncUp(
@@ -15,19 +15,16 @@ final class AppFeatureTests: XCTestCase {
             ],
             title: "Point-Free Morning Sync"
         )
-        @Shared(.syncUps) var syncUps: IdentifiedArrayOf<SyncUp> = [syncUp]
+        @Shared(.syncUps) var syncUps = [syncUp]
 
-        let store = TestStore(initialState: AppFeature.State()) {
-            AppFeature()
+        let store = TestStore(initialState: AppFeatureReducer.State()) {
+            AppFeatureReducer()
         }
 
-        guard let sharedSyncUp = $syncUps.elements.first else {
-            XCTFail("SyncUp not found")
-            return
-        }
+        let sharedSyncUp = try XCTUnwrap(Shared($syncUps[id: syncUp.id]))
 
-        await store.send(\.path.push, (id: 0, .detail(SyncUpDetail.State(syncUp: sharedSyncUp)))) {
-            $0.path[id: 0] = .detail(SyncUpDetail.State(syncUp: sharedSyncUp))
+        await store.send(\.path.push, (id: 0, .detail(SyncUpDetailReducer.State(syncUp: sharedSyncUp)))) {
+            $0.path[id: 0] = .detail(SyncUpDetailReducer.State(syncUp: sharedSyncUp))
         }
 
         await store.send(\.path[id: 0].detail.deleteButtonTapped)

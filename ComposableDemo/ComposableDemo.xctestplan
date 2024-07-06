@@ -18,9 +18,9 @@
   "testTargets" : [
     {
       "target" : {
-        "containerPath" : "container:ComposableDemo.xcodeproj",
-        "identifier" : "91D02CC12BF37138004EE097",
-        "name" : "ComposableDemoTests"
+        "containerPath" : "container:DemoReducers",
+        "identifier" : "DemoReducersTests",
+        "name" : "DemoReducersTests"
       }
     }
   ],
