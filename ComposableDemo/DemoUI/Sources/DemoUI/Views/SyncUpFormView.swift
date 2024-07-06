@@ -3,8 +3,6 @@ import DemoModels
 import DemoReducers
 import SwiftUI
 
-#warning("TODO: Move Views into separate package 💡")
-
 // MARK: - Views
 
 struct SyncUpFormView: View {

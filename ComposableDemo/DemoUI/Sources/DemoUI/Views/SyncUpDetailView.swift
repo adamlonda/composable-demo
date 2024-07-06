@@ -3,8 +3,6 @@ import DemoModels
 import DemoReducers
 import SwiftUI
 
-#warning("TODO: Move Views into separate package 💡")
-
 struct SyncUpDetailView: View {
 
     @Bindable var store: StoreOf<SyncUpDetailReducer>

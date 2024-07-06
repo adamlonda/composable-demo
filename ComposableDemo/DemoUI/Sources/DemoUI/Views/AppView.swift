@@ -3,15 +3,17 @@ import ComposableArchitecture
 import DemoReducers
 import SwiftUI
 
-#warning("TODO: Move Views into separate package 💡")
-
 // MARK: - View
 
-struct AppView: View {
+public struct AppView: View {
 
     @Bindable var store: StoreOf<AppFeatureReducer>
 
-    var body: some View {
+    public init(store: StoreOf<AppFeatureReducer>) {
+        self._store = Bindable(store)
+    }
+
+    public var body: some View {
         NavigationStack(
             path: $store.scope(state: \.path, action: \.path)
         ) {

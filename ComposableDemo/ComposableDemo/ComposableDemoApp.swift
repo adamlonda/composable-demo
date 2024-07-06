@@ -7,6 +7,7 @@
 
 import ComposableArchitecture
 import DemoReducers
+import DemoUI
 import SwiftUI
 
 #warning("TODO: Implement speech recognition feature, when it's available in P3 tutorial 🎗️")

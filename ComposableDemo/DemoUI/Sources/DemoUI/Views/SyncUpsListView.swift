@@ -4,8 +4,6 @@ import Foundation
 import ComposableArchitecture
 import SwiftUI
 
-#warning("TODO: Move Views into separate package 💡")
-
 // MARK: - Card View
 
 struct CardView: View {
