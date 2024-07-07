@@ -1,20 +1,13 @@
 import ComposableArchitecture
 @preconcurrency import DemoModels
+import DemoModelMocks
 @testable import DemoReducers
 import XCTest
 
 final class AppFeatureReducerTests: XCTestCase {
 
     @MainActor func testDelete() async throws {
-        let syncUp = SyncUp(
-            id: SyncUp.ID(),
-            attendees: [
-                Attendee(id: Attendee.ID(), name: "Blob"),
-                Attendee(id: Attendee.ID(), name: "Blob Jr."),
-                Attendee(id: Attendee.ID(), name: "Blob Sr.")
-            ],
-            title: "Point-Free Morning Sync"
-        )
+        let syncUp = SyncUp.mock()
         @Shared(.syncUps) var syncUps = [syncUp]
 
         let store = TestStore(initialState: AppFeatureReducer.State()) {

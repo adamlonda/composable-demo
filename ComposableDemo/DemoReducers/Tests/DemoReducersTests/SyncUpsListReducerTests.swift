@@ -16,13 +16,12 @@ class SyncUpsListReducerTests: XCTestCase {
 
         await store.send(.addSyncUpButtonTapped)
 
-        let editedSyncUp = SyncUp(
+        let editedSyncUp = SyncUp.mock(
             id: SyncUp.ID(UUID(0)),
             attendees: [
-                Attendee(id: Attendee.ID(), name: "Blob"),
-                Attendee(id: Attendee.ID(), name: "Blob Jr.")
-            ],
-            title: "Point-Free morning sync"
+                .blob,
+                .blobJr
+            ]
         )
 
         await store.send(\.addSyncUp.binding.syncUp, editedSyncUp)
@@ -43,13 +42,12 @@ class SyncUpsListReducerTests: XCTestCase {
             $0.addSyncUp = SyncUpFormReducer.State(syncUp: SyncUp(id: SyncUp.ID(UUID(0))))
         }
 
-        let editedSyncUp = SyncUp(
+        let editedSyncUp = SyncUp.mock(
             id: SyncUp.ID(UUID(0)),
             attendees: [
-                Attendee(id: Attendee.ID(), name: "Blob"),
-                Attendee(id: Attendee.ID(), name: "Blob Jr.")
-            ],
-            title: "Point-Free morning sync"
+                .blob,
+                .blobJr
+            ]
         )
 
         await store.send(\.addSyncUp.binding.syncUp, editedSyncUp) {
@@ -66,9 +64,9 @@ class SyncUpsListReducerTests: XCTestCase {
         let store = TestStore(
             initialState: SyncUpsListReducer.State(
                 syncUps: [
-                    SyncUp(
-                        id: SyncUp.ID(),
-                        title: "Point-Free Morning Sync"
+                    .mock(
+                        id: SyncUp.ID(UUID(0)),
+                        attendees: []
                     )
                 ]
             )

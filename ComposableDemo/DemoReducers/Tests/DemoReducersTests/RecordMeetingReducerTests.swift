@@ -8,11 +8,10 @@ final class RecordMeetingReducerTests: XCTestCase {
     @MainActor func testTimerFinishes() async {
         let dismissed = self.expectation(description: "dismissed")
         let clock = TestClock()
-        let syncUp = SyncUp(
-            id: SyncUp.ID(),
+        let syncUp = SyncUp.mock(
             attendees: [
-                Attendee(id: Attendee.ID(), name: "Blob"),
-                Attendee(id: Attendee.ID(), name: "Blob Jr")
+                .blob,
+                .blobJr
             ],
             duration: .seconds(4),
             title: "Morning Sync"

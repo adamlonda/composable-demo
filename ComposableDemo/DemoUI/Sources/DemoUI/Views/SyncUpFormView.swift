@@ -82,15 +82,7 @@ extension Duration {
     SyncUpFormView(
         store: Store(
             initialState: SyncUpFormReducer.State(
-                syncUp: SyncUp(
-                    id: SyncUp.ID(),
-                    attendees: [
-                        Attendee(id: Attendee.ID(), name: "Blob"),
-                        Attendee(id: Attendee.ID(), name: "Blob Jr."),
-                        Attendee(id: Attendee.ID(), name: "Blob Sr.")
-                    ],
-                    title: "Point-Free Morning Sync"
-                )
+                syncUp: .mock()
             )
         ) {
             SyncUpFormReducer()

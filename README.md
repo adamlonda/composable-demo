@@ -1,6 +1,6 @@
-# Composable Architecture Demo
+# Composable Architecture Demo + Swift Package Modules
 
-A sample iOS app based on [Pointfree Composable Architecture tutorial](https://pointfreeco.github.io/swift-composable-architecture/main/tutorials/buildingsyncups/).
+The [Pointfree Composable Architecture tutorial](https://pointfreeco.github.io/swift-composable-architecture/main/tutorials/buildingsyncups/) iOS demo, enhanced with Swift Package modules.
 
 ## Targeting & Build
 
@@ -9,7 +9,7 @@ A sample iOS app based on [Pointfree Composable Architecture tutorial](https://p
 
 ## Modules
 
-* `DemoModels` - Data structures & enums
+* `DemoModels` - Data structures, enums & its mocks
 * `DemoStorage` - Storage extensions to be used
 * `DemoReducers` - Reducers with unit tests
 * `DemoUI` - Views & colors

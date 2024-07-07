@@ -10,7 +10,7 @@ class SyncUpFormReducerTests: XCTestCase {
     @MainActor func testAddAttendee() async {
         let store = TestStore(
             initialState: SyncUpFormReducer.State(
-                syncUp: SyncUp(id: SyncUp.ID())
+                syncUp: .mock(attendees: [])
             )
         ) {
             SyncUpFormReducer()
@@ -30,8 +30,7 @@ class SyncUpFormReducerTests: XCTestCase {
     @MainActor func testRemoveAttendee() async {
         let store = TestStore(
             initialState: SyncUpFormReducer.State(
-                syncUp: SyncUp(
-                    id: SyncUp.ID(),
+                syncUp: .mock(
                     attendees: [
                         Attendee(id: Attendee.ID()),
                         Attendee(id: Attendee.ID())
@@ -55,10 +54,7 @@ class SyncUpFormReducerTests: XCTestCase {
         let store = TestStore(
             initialState: SyncUpFormReducer.State(
                 focus: .attendee(attendee1.id),
-                syncUp: SyncUp(
-                    id: SyncUp.ID(),
-                    attendees: [attendee1, attendee2]
-                )
+                syncUp: .mock(attendees: [attendee1, attendee2])
             )
         ) {
             SyncUpFormReducer()

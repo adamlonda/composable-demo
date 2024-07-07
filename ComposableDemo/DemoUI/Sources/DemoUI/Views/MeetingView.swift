@@ -1,4 +1,5 @@
 import DemoModels
+import DemoModelMocks
 import SwiftUI
 
 struct MeetingView: View {
@@ -27,23 +28,9 @@ struct MeetingView: View {
 
 // MARK: - Preview
 
-#warning("TODO: Figure out mocks to be reused 💡")
-
 #Preview {
     MeetingView(
-        meeting: Meeting(
-            id: Meeting.ID(),
-            date: Date(),
-            transcript: ""
-        ),
-        syncUp: SyncUp(
-            id: SyncUp.ID(),
-            attendees: [
-                Attendee(id: Attendee.ID(), name: "Blob"),
-                Attendee(id: Attendee.ID(), name: "Blob Jr."),
-                Attendee(id: Attendee.ID(), name: "Blob Sr.")
-            ],
-            title: "Point-Free Morning Sync"
-        )
+        meeting: .mock(),
+        syncUp: .mock()
     )
 }

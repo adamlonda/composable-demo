@@ -6,10 +6,7 @@ import XCTest
 class SyncUpDetailReducerTests: XCTestCase {
 
     @MainActor func testEdit() async {
-        let syncUp = SyncUp(
-            id: SyncUp.ID(),
-            title: "Point-Free Morning Sync"
-        )
+        let syncUp = SyncUp.mock()
         let store = TestStore(initialState: SyncUpDetailReducer.State(syncUp: Shared(syncUp))) {
             SyncUpDetailReducer()
         }
@@ -32,10 +29,7 @@ class SyncUpDetailReducerTests: XCTestCase {
     }
 
     @MainActor func testDelete() async {
-        let syncUp = SyncUp(
-            id: SyncUp.ID(),
-            title: "Point-Free Morning Sync"
-        )
+        let syncUp = SyncUp.mock()
         let store = TestStore(initialState: SyncUpDetailReducer.State(syncUp: Shared(syncUp))) {
             SyncUpDetailReducer()
         }
